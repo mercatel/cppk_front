@@ -1,56 +1,21 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+    <cppk-header/>
+    <v-parallax height="700" src="https://www.samsebaya.com/img/sliders/55slide03.jpg"></v-parallax>
+    <div class="main-container">
+      <router-view/>
+    </div>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import CppkHeader from "@/components/bloks/CppkHeader";
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    CppkHeader,
   },
 
   data: () => ({
@@ -58,3 +23,12 @@ export default {
   }),
 };
 </script>
+<style lang="scss">
+
+.main-container {
+  position: relative;
+  margin: -400px 10% 0 10%;
+  border-radius: 25%;
+}
+
+</style>
