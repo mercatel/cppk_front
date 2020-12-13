@@ -27,8 +27,10 @@ export default {
 
 .main-container {
   position: relative;
-  margin: -400px 10% 0 10%;
+  margin: -400px auto 0 auto;
   border-radius: 25%;
+  max-width: 1200px;
+
 }
 
 </style>

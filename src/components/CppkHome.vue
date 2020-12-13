@@ -5,6 +5,8 @@
       <cppk-card/>
       <cppk-card/>
       <cppk-card/>
+      <cppk-card/>
+      <cppk-card/>
     </div>
   </v-app>
 </template>
@@ -19,9 +21,10 @@ export default {
 }
 </script>
 <style lang="scss">
-.card_container{
+.card_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 2px;
 }
 </style>
