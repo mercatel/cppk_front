@@ -1,11 +1,11 @@
 <template>
-  <v-app>
+  <div id="app">
     <cppk-header/>
-    <v-parallax height="700" src="https://www.samsebaya.com/img/sliders/55slide03.jpg"></v-parallax>
+    <v-parallax height="800" src="https://www.samsebaya.com/img/sliders/55slide03.jpg"></v-parallax>
     <div class="main-container">
       <router-view/>
     </div>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -17,6 +17,13 @@ export default {
   components: {
     CppkHeader,
   },
+  // mounted() {
+  //   window.addEventListener('resize',function (){
+  //     if(window.innerWidth>767){
+  //
+  //     }
+  //   })
+  // },
 
   data: () => ({
     //
@@ -24,11 +31,14 @@ export default {
 };
 </script>
 <style lang="scss">
+body{
+  background: #000000;
+}
 
 .main-container {
+  background: white;
   position: relative;
   margin: -400px auto 0 auto;
-  border-radius: 25%;
   max-width: 1200px;
 
 }
