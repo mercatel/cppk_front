@@ -33,6 +33,9 @@ export default {
 <style lang="scss">
 body{
   background: #000000;
+  a {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+   }
 }
 
 .main-container {

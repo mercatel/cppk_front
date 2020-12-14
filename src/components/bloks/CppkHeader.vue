@@ -9,13 +9,10 @@
       <div class="header_bottom-logo">
         <img :src="logo" alt="">
       </div>
+    </div>
+    <div class="menu">
       <div class="header_bottom-menu">
-        <a class="menu-item">Home</a>
-        <a class="menu-item">Tab 1</a>
-        <a class="menu-item">Tab 2</a>
-        <a class="menu-item">Tab 3</a>
-        <a class="menu-item">Tab 4</a>
-        <a class="menu-item">Tab 5</a>
+        <router-link v-for="item in menu" :key="item" to="/" class="menu-item">{{item}}</router-link>
       </div>
     </div>
   </div>
@@ -30,6 +27,7 @@ export default {
       phone: "8-800-700-11-52",
       operating_mode: "c 8:30 до 17:30",
       address: "г.Уфа, ул. Цюрупы, 17",
+      menu: ['Главная','Об организации','Дистанционное обучение','Проекты','Бланки заявок', 'Мероприятия']
     }
   }
 }
@@ -59,28 +57,23 @@ export default {
 
   .header_bottom {
     display: flex;
-
-
-    .header_bottom-menu {
+  }
+  .header_bottom-menu {
       display: flex;
       width: 100%;
       justify-content: space-evenly;
       align-items: flex-end;
 
-      a {
+      .menu-item {
         color: white;
-        //border: 1px solid white;
         font-size: 20px;
-        max-width: 200px;
-        padding: 10px 50px;
         border-radius: 5%;
       }
 
-      a:hover {
+      .menu-item:hover {
         box-shadow: 1px 0 10px rgba(0, 0, 0, 0.5);
       }
     }
-  }
 }
 
 

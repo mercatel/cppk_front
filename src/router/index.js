@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import CppkHome from "@/components/CppkHome";
-import CppkNews from "@/components/CppkNews";
+import CppkNews from "@/components/moduls/CppkNews";
 
 Vue.use(VueRouter)
 
