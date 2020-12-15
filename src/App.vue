@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <cppk-header/>
-    <v-parallax height="800" src="https://www.samsebaya.com/img/sliders/55slide03.jpg"></v-parallax>
-    <div class="main-container">
-      <router-view/>
-    </div>
+    <v-app :style="{background: $vuetify.theme.themes[theme].background}">
+      <cppk-header/>
+      <v-parallax height="700" src="https://www.samsebaya.com/img/sliders/55slide03.jpg"></v-parallax>
+      <div class="main-container">
+        <router-view/>
+      </div>
+    </v-app>
   </div>
 </template>
 
@@ -16,6 +18,11 @@ export default {
 
   components: {
     CppkHeader,
+  },
+  computed:{
+    theme(){
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+    }
   },
   // mounted() {
   //   window.addEventListener('resize',function (){
@@ -31,12 +38,15 @@ export default {
 };
 </script>
 <style lang="scss">
-body{
-  background: #000000;
+#app {
+  background-color: black;
+
   a {
-    text-decoration: none; /* Отменяем подчеркивание у ссылки */
-   }
+    text-decoration: none;
+  }
+
 }
+
 
 .main-container {
   background: white;

@@ -12,7 +12,23 @@
     </div>
     <div class="menu">
       <div class="header_bottom-menu">
-        <router-link v-for="item in menu" :key="item" to="/" class="menu-item">{{item}}</router-link>
+        <router-link v-for="item in menu" :key="item" to="/" class="menu-item">{{ item }}</router-link>
+        <div class="text-center">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <a class="menu-item" v-bind="attrs" v-on="on">
+                Об организации
+              </a>
+            </template>
+            <v-list>
+              <router-link v-for="(item, index) in items" :key="index" to="/news">
+                <v-list-item >
+                  <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item>
+              </router-link>
+            </v-list>
+          </v-menu>
+        </div>
       </div>
     </div>
   </div>
@@ -27,7 +43,13 @@ export default {
       phone: "8-800-700-11-52",
       operating_mode: "c 8:30 до 17:30",
       address: "г.Уфа, ул. Цюрупы, 17",
-      menu: ['Главная','Об организации','Дистанционное обучение','Проекты','Бланки заявок', 'Мероприятия']
+      menu: ['Главная', 'Дистанционное обучение', 'Проекты', 'Бланки заявок', 'Мероприятия'],
+      items: [
+        {title: 'Click Me'},
+        {title: 'Click Me'},
+        {title: 'Click Me'},
+        {title: 'Click Me 2'},
+      ],
     }
   }
 }
@@ -58,22 +80,23 @@ export default {
   .header_bottom {
     display: flex;
   }
+
   .header_bottom-menu {
-      display: flex;
-      width: 100%;
-      justify-content: space-evenly;
-      align-items: flex-end;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: flex-end;
 
-      .menu-item {
-        color: white;
-        font-size: 20px;
-        border-radius: 5%;
-      }
-
-      .menu-item:hover {
-        box-shadow: 1px 0 10px rgba(0, 0, 0, 0.5);
-      }
+    .menu-item {
+      color: white;
+      font-size: 20px;
+      border-radius: 5%;
     }
+
+    .menu-item:hover {
+      box-shadow: 1px 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
 }
 
 

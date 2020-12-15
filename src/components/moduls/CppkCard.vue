@@ -41,14 +41,14 @@ export default {
     margin: 0 -100%;
     height: 50%;
     width: 100%;
-    background-color: #0552ff73;
+    background-color: $bgheader;
   }
 
 }
 
 .mycard:hover {
   .card_title {
-    background-color: #0552ffc4;
+    background-color: $bgheader-hover;
   }
 
 }

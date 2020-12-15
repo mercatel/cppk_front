@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="container">
-      <div class="cards">
+      <div class="cards ">
         <cppk-card/>
         <cppk-card/>
         <cppk-card/>
@@ -29,6 +29,9 @@ export default {
 }
 </script>
 <style lang="scss">
+#app{
+  background: white;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
