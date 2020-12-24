@@ -19,6 +19,7 @@ export default new Vuetify({
       },
       dark: {
         primary: colors.blue.lighten3,
+        // background: colors.indigo.base, // If not using lighten/darken, use base to return hex
         background: colors.indigo.base, // If not using lighten/darken, use base to return hex
       },
     },

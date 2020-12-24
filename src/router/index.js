@@ -1,21 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import CppkHome from "@/components/CppkHome";
-import CppkNews from "@/components/moduls/CppkNews";
+import CppkWrapper from "@/components/CppkWrapper";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: CppkHome
+    name: 'Wrapper',
+    component: CppkWrapper
   },
-  {
-    path: '/news',
-    name: 'News',
-    component: CppkNews,
-  }
 ]
 
 const router = new VueRouter({

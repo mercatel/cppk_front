@@ -1,59 +1,104 @@
 <template>
-  <div id="app">
-    <v-app :style="{background: $vuetify.theme.themes[theme].background}">
-      <cppk-header/>
-      <v-parallax height="700" src="https://www.samsebaya.com/img/sliders/55slide03.jpg"></v-parallax>
-      <div class="main-container">
-        <router-view/>
-      </div>
-    </v-app>
-  </div>
+  <v-app>
+    <wrapper/>
+  </v-app>
 </template>
 
 <script>
-import CppkHeader from "@/components/bloks/CppkHeader";
+import Wrapper from "@/components/CppkWrapper";
 
 export default {
   name: 'App',
-
   components: {
-    CppkHeader,
+    Wrapper
   },
-  computed:{
-    theme(){
+  computed: {
+    theme() {
       return (this.$vuetify.theme.dark) ? 'dark' : 'light'
     }
   },
-  // mounted() {
-  //   window.addEventListener('resize',function (){
-  //     if(window.innerWidth>767){
-  //
-  //     }
-  //   })
-  // },
-
   data: () => ({
     //
   }),
 };
 </script>
 <style lang="scss">
-#app {
-  background-color: black;
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 
-  a {
-    text-decoration: none;
-  }
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 
-.main-container {
-  background: white;
-  position: relative;
-  margin: -400px auto 0 auto;
-  max-width: 1200px;
+img {
+  vertical-align: top;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+
+.bigred {
+  font-size: 20px;
+  color: red;
 }
 
 </style>
